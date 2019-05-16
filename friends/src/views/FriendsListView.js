@@ -12,6 +12,7 @@ class FriendsListView extends React.Component {
 
   componentDidMount() {
     // call our action
+    console.log("Friends list view props", this.props)
     this.props.fetchMyFriends();
   }
 
@@ -19,8 +20,9 @@ class FriendsListView extends React.Component {
     if (this.props.fetching) {
       // return something here to indicate that you are fetching data
     }
+    
     return (
-      <div className="CharactersList_wrapper">
+      <div className="FriendsList_wrapper">
         <FriendsList friends={this.props.friends} />
       </div>
     );

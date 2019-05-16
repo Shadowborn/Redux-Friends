@@ -35,7 +35,7 @@ export const reduceFriends = (state = initialState, action) => {
             ...state,
             fetching: false,
             error: '',
-            friends: action.payload.results
+            friends: action.payload
         }
         case FAILURE_FETCH: return {
             ...state,

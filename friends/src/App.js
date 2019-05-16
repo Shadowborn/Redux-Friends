@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import PrivateRoute from "./PrivateRoute";
 import Login from "./components/Login";
-// import GasPrices from "./components/GasPrices";
+import FriendsListView from "./views/FriendsListView";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           </li>
         </ul>
         <Route path="/login" component={Login} />
-        {/* <PrivateRoute exact path="/protected" component={GasPrices} /> */}
+        <PrivateRoute exact path="/protected" component={FriendsListView} />
       </div>
     </Router>
   );

@@ -12,6 +12,7 @@ export const login = creds => dispatch => {
     return axios
         .post("http://localhost:5000/api/login", creds)
         .then(res => {
+            console.log("Login data", res.data);
             localStorage.setItem("token", res.data.payload);
             dispatch({ type: LOGIN_SUCCESS, payload: res.data.payload })
         })
@@ -37,11 +38,11 @@ export const FAILURE_FETCH = 'FAILURE_FETCH';
 
 export const fetchMyFriends = () => dispatch => {
     dispatch({ type : JUST_FETCH })
-    axiosWithAuth
+    axiosWithAuth()
         .get('http://localhost:5000/api/friends')
         .then(res => {
-            dispatch({ type : SUCCESS_FETCH, payload: res.data.data })
-                console.log("axios data", res.data);
+            dispatch({ type : SUCCESS_FETCH, payload: res.data })
+                console.log("Fetch data", res.data);
             })
         .catch(err => {
             dispatch({type:FAILURE_FETCH})
