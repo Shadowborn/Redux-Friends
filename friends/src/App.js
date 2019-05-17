@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import Login from "./components/Login";
 import FriendsListView from "./views/FriendsListView";
+import NewFriendForm from "./components/NewFriendForm"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         </ul>
         <Route path="/login" component={Login} />
         <PrivateRoute exact path="/protected" component={FriendsListView} />
+        <PrivateRoute exact path="/protected" component={NewFriendForm} />
       </div>
     </Router>
   );
